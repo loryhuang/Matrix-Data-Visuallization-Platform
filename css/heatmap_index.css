@@ -1,0 +1,78 @@
+html {
+    background: #f4f4f4;
+}
+
+body {
+    padding-top: 0;
+    background: #f4f4f4;
+}
+
+.navbar .brand {
+    margin-left: 0;
+    padding: 10px 20px;
+    font-size: 30px;
+}
+
+.anti-social-row-fluid{
+
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#file-list ul {
+    font-size: 20px;
+}
+
+#file-list ul li {
+    line-height: 1.5;
+}
+
+#userInfo {
+    display: block;
+}
+
+#view_container {
+    display: block;
+}
+
+.center-box-form {
+    width: 500px;
+    margin: 30px auto;
+}
+
+#form_box {
+    margin: 30px auto;
+    border: 1px solid #CCC;
+}
+
+#form_box td {
+    vertical-align: top;
+}
+
+#form_box td.l {
+    text-align: right;
+}
+
+#form_box td.r {
+    text-align: left;
+}
+
+#searchForm {
+    padding: 25px;
+}
+
+.text-center {
+    margin-top: 20px;
+}
+
+.text-success {
+    color: #16a085;
+}

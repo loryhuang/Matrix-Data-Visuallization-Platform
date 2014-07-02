@@ -1,0 +1,42 @@
+body {
+    background-color: #f4f4f4;
+}
+
+strong {
+    color: #f39c12;
+    font-size: 40px;
+}
+
+.login-form {
+    width: 50%;
+}
+
+.login-form h3 {
+    font-size: 24px;
+    text-align: left;
+    margin: 0;
+}
+
+.login-form .login-header {
+    font-size: 40px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"],
+.login-form input[type="button"] {
+    width: 90%;
+    margin: 24px 0;
+}
+
+.form-box {
+    border: 1px solid #dedede;
+    background-color: #ffffff;
+}
+
+.form-body {
+    padding: 40px 40px 20px;
+}
+
+.register-link {
+    margin-top: 20px;
+}

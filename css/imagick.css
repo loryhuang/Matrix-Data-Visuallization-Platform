@@ -1,0 +1,146 @@
+	#img {
+	    width: 100%;
+	    height: 640px;
+	    overflow: scroll;
+	    position: relative;
+	    border-left: 1px solid #EEE;
+	}
+
+	#img img {
+	    /*width: 100%;
+	    height: 100%;*/
+	}
+
+	.imgLoading {
+	    width: 300px;
+	    height: 300px;
+	    margin: 0px auto;
+	    background: url('../images/loader.gif') no-repeat center;
+	    display: none;
+	    z-index: 5
+	}
+
+	#hide_line {
+	    position: absolute;
+	    top: 0px;
+	    left: 0px;
+	    height: 3px;
+	    background-color: yellow;
+	}
+
+	.imgareaselect-outer {
+	    background-color: #ffffcc;
+	    padding: 0px;
+	    margin: 0px;
+	    z-index: 3;
+	}
+
+	.imgareaselect-outer p {
+	    margin-top: 5px;
+	}
+
+	#l {
+	    float: left;
+	    width: 480px;
+	    height: auto;
+	    padding: 0px;
+	    margin: 0px;
+	}
+
+	#sr {
+	    float: left;
+	    width: 150px;
+	    height: auto;
+	    margin-top: 0px;
+	    padding: 0px;
+	    overflow: hidden;
+	    border: 0px solid #EEE;
+	}
+
+	#r {
+	    width: 150px;
+	    height: 640px;
+	    margin-top: 0px;
+	    overflow: hidden;
+	}
+
+	#s {
+	    width: 150px;
+	    height: 150px;
+	    border: 0px solid #EEE;
+	    border-left: 0px;
+	    border-top: 0px;
+	    font-size: 12px;
+	    padding: 0px;
+	    margin: 0px;
+	}
+
+	#s p {
+	    margin: auto;
+	    padding: 8px;
+	}
+
+	#r p {
+	    height: 16px;
+	    line-height: 16px;
+	    margin: 0px;
+	    margin-left: 15px;
+	    padding: 0px;
+	    font-size: 12px;
+	    cursor: default;
+	}
+
+	#t {
+	    width: 100%;
+	    height: 150px;
+	    overflow: hidden;
+	    margin: 0px;
+	    border: 0px solid #EEE;
+	    border-right: none;
+	}
+
+	#t .col {
+	    height: 150px;
+	    width: 16px;
+	    float: left;
+	    text-align: left;
+	    font-size: 12px;
+	    writing-mode: tb-lr;
+	    margin: 0px;
+	    cursor: default;
+	    padding-top: 15px;
+	}
+
+	#img #line_x {
+	    position: absolute;
+	    width: 475px;
+	    height: 2px;
+	    background-color: #FF0;
+	    z-index: 5;
+	    left: 0px;
+	}
+
+	#img #line_y {
+	    position: absolute;
+	    width: 2px;
+	    height: 625px;
+	    background-color: #FF0;
+	    z-index: 5;
+	    top: 0px;
+	}
+
+	#img .stag {
+	    position: absolute;
+	    width: 12px;
+	    height: 12px;
+	    border: 2px solid #FFFFFF;
+	    z-index: 4;
+	}
+
+        .s_loading{
+            width: 100%;
+            height: 100%;
+            margin: 0px auto;
+            background:url('../images/loader.gif') no-repeat center;
+            display:none;
+        }

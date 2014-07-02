@@ -1,0 +1,293 @@
+/* 
+    Document   : process_index.css
+    Created on : 2014-5-13, 14:47:06
+    Author     : Administrator
+    Description:
+        Purpose of the stylesheet follows.
+*/
+body {
+    height: 100%;
+    margin: 0px ;
+    padding:0px;
+}
+
+#content .process_content {
+    width: 80%;
+    background-color: #FFF;
+    min-height: 300px;
+    margin: 0px auto; 
+    padding: 25px;
+    border-bottom: 1px solid #ccc;
+}
+
+.process_box {
+    width: 600px;
+    margin: 0px auto;
+}
+
+.process_box form p {
+    margin: 15px 5px;
+}
+
+.process_content h3 {
+    margin: 15px auto;
+    color: #2A8EAE;
+}
+
+.process_content .process_tip {
+    line-height: 20px;
+    margin:25px 5px;
+    font-size: 14px;
+}
+
+.process_content .time_tip {
+    line-height: 20px;
+    margin:25px 5px;
+    font-size: 14px;
+}
+
+.cluster-group {
+    height: 30px;
+    padding: 0px 15px;
+}
+
+.cluster-group p {
+    height: 30px;
+    line-height: 30px;
+}
+
+.cluster-group input {
+    width: 35px;
+    vertical-align: middle;
+}
+
+.btn-group {
+    width: 500px;
+    height: 120px;
+    padding: 5px 25px 25px 25px;
+    margin-bottom: 15px;
+}
+
+.process_content select {
+    display: inline;
+    width: 300px;
+}
+
+.process_content .slabel{
+    display: inline-block;
+    width: 120px;
+    text-align: right;
+}
+
+.sbtn{
+    width: 500px;
+    padding: 5px;
+    margin-top: 45px;
+    text-align: center;
+}
+
+.sbtn button {
+    width: 100px;
+}
+
+li.divider {
+    box-sizing: content-box;
+}
+
+img, object{
+    height: auto;
+}
+
+.btn-group div{
+    width: 150px;
+    float: left;
+}
+
+.btn-group p  {
+    padding-left: 25px;
+}
+
+.btn-group label {
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    text-align: left;
+}
+
+.btn-group label input {
+    width: auto;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.btn-group label a{
+   width: 50px;
+   height: 20px;
+   float: left;
+   display: block;
+}
+
+.error_content p {
+    margin-top: 15px;
+}
+
+
+.back_link {
+    margin-top: 25px; 
+}
+.back_link a {
+    color: #2A8EAE;
+}
+
+
+/*-- btn-select --*/
+.btn-select {
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    height: 25px;
+    background-color: none;
+    font: 14px/20px "Microsoft YaHei";
+    color: #000;
+}
+
+.btn-select .cur-select {
+    position: absolute;
+    display: block;
+    width: 120px;
+    height: 25px;
+    line-height: 25px;
+    background: url("../image/ico-arrow.png") no-repeat 95px center;
+    text-indent: 10px;
+    border: 1px solid #eee;
+}
+
+.btn-select:hover .cur-select {
+    background-color: none;
+}
+
+.btn-select-label{
+    position: relative;
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    margin-left: 15px;
+    top: -8px;
+}
+
+/*--Reset btn--*/
+.reset-color {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 25px;
+    top: -8px;
+    margin-left: 45px;
+}
+
+.reset-color a {
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/*--Result icon--*/
+.result-color {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 25px;
+    margin-left: 45px;
+}
+
+.result-color a {
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    cursor: default;
+}
+
+/*-- User select --*/
+.btn-select .options {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    width: 120px;
+    height: auto;
+    font: 14px/20px "Microsoft YaHei";
+    color: #000;
+    border: 1px solid #ccc;
+    z-index: 200;
+    display: none;
+}
+
+.btn-select .options p {
+    text-indent: 10px;
+    margin: 0px;
+    padding: 0px;
+    cursor: default;
+}
+
+.btn-select .options p:hover {
+    font-weight: bold;
+}
+
+/*-- colors --*/
+
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.white {
+    background-color: #EEE;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.cm-low {
+    background-color: #9EFFFF;
+}
+
+.cm-high{
+    background-color: #FC66FF;
+}
+
+.terrain-low {
+    background-color:#40A41C;
+}
+
+.terrain-high {
+    background-color:#E8AB91;
+}
+
+.heat-low {
+    background-color: #FC1D07;
+}
+
+.heat-high {
+    background-color: #FFFF00;
+}
+
+.aqua {
+    background-color: aqua;
+}
+
+.brown {
+    background-color: Brown;
+}
+
+.purple {
+    background-color: purple;
+}

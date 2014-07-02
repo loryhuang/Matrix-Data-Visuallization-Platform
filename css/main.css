@@ -1,0 +1,607 @@
+body {
+    height: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: Verdana, "微软雅黑", Arial, Helvetica, sans-serif;
+    background-color: #EDF0F0;
+}
+
+#pageLoading {
+    position: relative;
+    width: 650px;
+    height: 600px;
+    margin: 0px auto;
+    text-align: center;
+    background: url('../images/loader.gif') no-repeat center center;
+}
+
+#pageLoading h2{
+    width: 650px;
+    height: 20px;
+    position: absolute;
+    top: 175px;
+    left: 0px;
+    color: #222;
+    font-size: 16px;
+}
+/*#view_container{width:100%;height:auto;background-color:#FFF;padding: 0px;margin-top: 0px;display:none;}*/
+#userInfo {
+    display: none;
+}
+
+#view_container {
+    display: none;
+}
+
+#imagick {
+    height: 100%;
+    display: none;
+}
+
+/*#userInfo{background-color:#FFF;border:none;margin:0px;}*/
+/*padding: 5px;*/
+/*width:100%;height:100%;margin:0px;*/
+#view {
+    height: 100%;
+    padding: 0px;
+    background-color: #FFF;
+    position: relative;
+}
+
+#viewer {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding-top: 0px;
+    background-color: #111;
+    top: 0;
+    position: relative;
+}
+
+.single_line {
+    background-color: #FFFCEC;
+    position: absolute;
+    z-index: 2;
+    left: 0px;
+    top: 0px
+}
+
+/*#imagick{width: 100%;clear: both;margin-top: 25px;margin-left:0px;border: 0px solid #026890;z-index:5;}*/
+#matrix {
+    display: none;
+    width: auto;
+    height: auto;
+    margin-left: 0px;
+    border: none
+}
+
+#matrix #getHeatmap {
+    width: auto;
+    height: auto;
+    margin-left: 0px;
+    border: none
+}
+
+#img {
+    width: 100%;
+    height: auto;
+    overflow: scroll;
+    position: relative;
+    border-left: 1px solid #EEE;
+}
+
+#img img {
+    width: 100%;
+    height: 100%;
+}
+
+.imgLoading {
+    width: 300px;
+    height: 300px;
+    margin: 0px auto;
+    background: url('../images/loader.gif') no-repeat center;
+    display: none;
+    z-index: 5
+}
+
+#hide_line {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 3px;
+    background-color: yellow;
+}
+
+.imgareaselect-outer {
+    background-color: #ffffcc;
+    padding: 0px;
+    margin: 0px;
+    z-index: 5; /* set in js */
+}
+
+.imgareaselect-outer p {
+    margin-top: 5px;
+}
+
+/*#l {
+    float: left;
+    width: auto;
+    height: auto;
+    padding: 0px;
+    margin: 0px;
+}
+
+#sr {
+    float: left;
+    width: 150px;
+    height: auto;
+    margin-top: 0px;
+    padding: 0px;
+    overflow: hidden;
+    border: 0px solid #EEE;
+}
+
+#r {
+    width: 150px;
+    height: auto;
+    margin-top: 0px;
+    overflow: hidden;
+}
+
+#s {
+    width: 150px;
+    height: 150px;
+    border: 0px solid #EEE;
+    border-left: 0px;
+    border-top: 0px;
+    font-size: 12px;
+    padding: 0px;
+    margin: 0px;
+}
+
+#s p {
+    margin: auto;
+    padding: 8px;
+}
+
+#r p {
+    height: 16px;
+    line-height: 16px;
+    margin: 0px;
+    margin-left: 15px;
+    padding: 0px;
+    font-size: 12px;
+    cursor: default;
+}
+
+#t {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    margin: 0px;
+    border: 0px solid #EEE;
+    border-right: none;
+}
+
+#t .col {
+    height: 150px;
+    width: 16px;
+    float: left;
+    text-align: left;
+    font-size: 12px;
+    writing-mode: tb-lr;
+    margin: 0px;
+    cursor: default;
+    padding-top: 15px;
+}
+
+#img #line_x {
+    position: absolute;
+    width: 475px;
+    height: 2px;
+    background-color: #444;
+    z-index: 5;
+    left: 0px;
+}
+
+#img #line_y {
+    position: absolute;
+    width: 2px;
+    height: 625px;
+    background-color: #444;
+    z-index: 5;
+    top: 0px;
+}
+
+#img .stag {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #FFFFFF;
+    z-index: 4;
+}
+*/
+.toolbar {
+    width: 75px;
+    margin: 0px auto;
+    padding: 2px;
+    height: 72px;
+    text-align: center;
+    border: 0px solid #999;
+}
+
+#getImagick, #reCluster, #cancelBtn {
+    width: 75px;
+    height: 24px;
+    /*background-color: #6D848C;*/
+    color: #FFF;
+    background: #222; 
+    padding: 4px 8px; 
+    margin-bottom: 1px;
+    vertical-align: middle;
+    border: none;
+}
+
+#reCluster:hover, #getImagick:hover, #cancelBtn:hover {
+    background: #444;
+}
+
+.credit {
+    display: none;
+}
+
+.s_loading {
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+    background: url('../images/loader.gif') no-repeat center;
+    display: none
+}
+
+/*area left after select*/
+.selected_area {
+    position: absolute;
+    overflow: hidden;
+    z-index: 0;
+    display: block;
+    border: 1px solid #FFF;
+}
+
+#user {
+    width: 250px;
+    float: left;
+    height: auto;
+}
+
+#upload_link {
+    float: right;
+    width: 150px;
+    height: auto;
+    margin-right: 25px;
+}
+
+#contextmenu {
+    width: 75px;
+    height: 45px;
+    line-height: 22px;
+    text-align: center;
+    font-size: 12px;
+    position: absolute;
+    background-color: #FFF;
+    color: #000;
+    border: 1px solid #CCC;
+}
+
+#contextmenu p {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #ccc;
+}
+
+#hm_desc {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 40px;
+    padding: 0 18px;
+    line-height: 40px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+    background-color: #666;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+
+#FindBtn{
+    display: none;
+}
+
+/*  FOR IMAGES AND MARKS  */
+.matrixOrigin .detailMarkBtn {
+    margin-left: 10px;
+}
+
+.matrixAdd .detailMarkBtn {
+    margin-left: 20px;
+}
+
+/*-- style of guests --*/
+.guest-mark-box {
+    width: 350px;
+}
+
+.mark-box p{
+    line-height: 20px;
+    padding:2px 12px;
+}
+
+.delMarkbtn{
+    position: absolute;
+    top: -5px;
+    right: -15px;
+}
+
+.delMarkbtn a{
+    width: 50px;
+    height: 20px;
+    padding:3px 2px;
+}
+
+p.mark_time {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
+input, textarea {
+    width: 94%;
+}
+
+.btn {
+    color: #666
+}
+
+.row {
+    margin-left: 0;
+}
+
+.row-fluid {
+    margin: 0;
+}
+
+#view_container {
+    margin: 0px;
+    padding: 0px;
+}
+
+.navbar {
+    height: 60px;
+    background-color: #252B31; 
+}  
+.nav-logo {
+    width: 250px;
+    height: 60px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.nav-logo .logo {
+    width: 212px;
+    height: 40px;   
+    display: block;
+    float: left;
+    margin: 10px 10px 10px 20px;
+    padding: 0px;
+    background: url("../image/inner_logo.jpg") center center no-repeat;
+}
+
+.nav-info {
+    width: 500px;
+    height: 60px;
+    margin: 0px auto;
+    text-align: center;
+    position: relative;
+}
+.nav-info h3 {
+    height: 30px;
+    padding: 15px 0px;
+    line-height: 30px;
+    color: #59BFCD;
+    font-weight: 500;
+    overflow: hidden;
+    cursor: default;
+}
+
+.nav-info .user-icon {
+    width: 200px;
+    height: 35px;
+    border-bottom-right-radius:25px ;
+    border-bottom-left-radius:25px;
+    position: absolute;
+    left: 150px;
+    bottom: -20px;
+    background-color:#252B31;
+    z-index: 1;
+}
+
+.nav-info .size-icon{
+    max-width: 350px;
+    height: 60px;
+    position: absolute;
+    right: -350px;
+    top: 0px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    overflow: hidden;
+}
+.size-icon a {
+    color: #999;
+    text-decoration: underline;
+}
+
+.user-icon p {
+    line-height: 35px;
+    color: #999;
+    cursor: default;
+    z-index: 1;
+}
+
+/*-- cover buttons ,set new style --*/
+
+.btn {
+    background-color: #5FBFCD;
+    border: medium none;
+    color: #FFF;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    transition: opacity 0.2s ease-in-out 0s;
+    margin-bottom: 5px;
+    font-family: helvetica,"arial", "Microsoft YaHei";
+}
+
+.btn-m {
+    padding: 8px 12px;
+    margin-top: -5px;
+    margin-right: -5px;
+}
+
+/*-- specify for conform and alert box --*/
+
+#conform_box ,#alert_box{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    list-style: none;
+    background-color: #ffffff;
+    border: 1px solid #252B31;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    *border-right-width: 2px;
+    *border-bottom-width: 2px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+}
+
+.box_content {
+    position: relative;
+    width: 360px;
+    height: auto;
+    padding: 25px;
+    clear: both;
+}
+
+#alert_box .box_content {
+    height: auto;
+    min-height: 120px;
+    padding: 15px;
+}
+
+#alert_box p {
+    margin: 35px 5px 15px 5px;
+    text-align: center;
+}
+
+
+#conform_box .box_content{
+    /*height: 150px;*/
+    padding: 15px;
+}
+
+.button-group {
+    margin:8px auto;
+}
+
+.close_tag{
+    width: 30px;
+    height: 30px;
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    background: url("../image/close-icon.png") no-repeat center center;
+}
+
+#conform_box .close_tag {
+    top: 5px;
+    right: 5px;
+}
+
+#conform_box .button-group {
+    text-align: center;
+    margin: 15px auto;
+}
+
+#conform_box p {
+    margin: 25px 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.conform_btn {
+    width: 270px;
+    margin: 15px auto;
+}
+
+.del_conform_btn {
+    width: 120px;
+    display: block;
+    float: left;
+    margin-bottom: 15px;
+}
+
+.del_cancel_btn {
+    width: 120px;
+    display: block;
+    float: right;
+    margin-bottom: 15px;
+}
+
+.alert_tips_btn {
+    width: 120px;
+    display: block;
+    margin: 15px auto;
+}
+
+/*-- shade --*/
+#shade {
+    background: #000;
+    display: none;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+    min-height: 100%;
+    height: 100%;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 999;
+}
+
+.mark-box .btn-m {
+    padding: 4px 12px;
+    margin-top: -5px;
+}
+
+.saveMarkBtn , .cancelMarkBtn {
+    width: 60px;
+    margin-top: 15px;
+    margin-right: 25px;
+}
+
+.btn-s {
+    width: auto;
+    margin: 5px;
+}
