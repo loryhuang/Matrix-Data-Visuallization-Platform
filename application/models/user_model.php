@@ -110,13 +110,37 @@ class User_model extends Memcached_model
         return 0;
     }
 
+     /**
+     * @brief 检查用户名和邮箱是否对应
+     *
+     * @param $username
+     * @param $pwd
+     *
+     * @return 1表示成功，0表示用户不存在，-1表示不对应
+     */
+    function check_email($username,$email){
+        $username = htmlspecialchars($username);
+        $user = $this->get_user_by_username($username);
+        //print_r($user);
+        if(count($user) == 0){
+            return 0;
+        }
+        if($user->email == $email){
+            return 1;
+        }else{
+            return -1;
+        }
+    }
+
+
     /**
      * @brief  获取用户所有信息
      *
      * @param $user_id
      *
      * @return
-     */
+    */
+
     function get_user_by_user_id($user_id)
     {
         if ($user_id == "") {

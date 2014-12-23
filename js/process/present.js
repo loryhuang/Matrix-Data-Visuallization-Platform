@@ -132,6 +132,7 @@ define([
 
                 //transfer the image format and apply the iipmooviewer
                 var transPng2Tiff = function() {
+                    //将png转化为tiff图片
                     $.ajax({
                         type: 'GET',
                         url: Const.URL_TRANS_PNG_TIFF,
@@ -368,7 +369,7 @@ define([
             //Calculate position of pop-up box AND show pop-ups
             function popupBox(obj) {
                 var top = ($(window).height() - obj.height()) / 2 - 30;
-                var left = ($(window).width() - obj.width()) / 2 - 100;
+                var left = ($(window).width() - obj.width()) / 2 ;
                 obj.css({
                     'left': left, 
                     'top': top
@@ -538,6 +539,14 @@ define([
  
                 //检查pin的输入情况是否正确
                 if (type == 0){
+                    if(title.length > 30){
+                        alert('title can not be more than 30 characters!');
+                        return;
+                    }
+                    if(description.length > 200){
+                        alert('description can not be more than 200 characters!');
+                        return;
+                    }
                     if ($.trim(title) == '' || $.trim(description) == '') {
                         alert('No contents!');
                         return;
@@ -626,7 +635,8 @@ define([
                             
                             //改变按钮的文字和类型
                             if(type == 1){
-                               $(_this).addClass("cancelMarkBtn").removeClass(".saveMarkBtn").text("Cancel").attr("title","click to hide this region ");
+                               $(_this).addClass("cancelMarkBtn").removeClass(".saveMarkBtn").text("Cancel");
+                               $(_this).attr("title","click to temporarily hide this area ");
                             }
 
                             if(Cache.getData("isLogin") == 0){
@@ -649,9 +659,10 @@ define([
             });
 
             //点击按钮删除region
-            $(".region_close_icon").live("click",function(){
+            $(".region_close_icon").live("click",function(event){
                 var mark_id = $(this).parent().attr("id");
-                if(mark_id === undefined ){
+                console.log(mark_id);
+                if(mark_id == undefined){
                     $(this).parent().next(".mark-box").remove();
                     $(this).parent().remove();
                 }else{
@@ -659,7 +670,10 @@ define([
                     $("#del_type").text("region");
                     $("#del_mark_name").text("");
                     popupBox($("#conform_box"));
-                } 
+                }
+                //阻止事件冒泡
+                event.stopPropagation();
+                return false;
             });
             
 
@@ -747,7 +761,7 @@ define([
 
             //鼠标点击pin显示mark-box
             $('.pin').live('click', function() {
-                var editStatus = $("#viewer").find(".saveMarkBtn").length;
+                var editStatus = $("#viewer").find("#mark_title").length;
                 if (editStatus > 0) {
                     return; //尚未保存信息，点击无反应
                 }
@@ -767,7 +781,7 @@ define([
                     return;
                 }
                 var obj = $(this).next('.mark-box');
-                if (obj.find('.saveMarkBtn').length > 0) {
+                if (obj.find('#mark_title').length > 0) {
                     return; //尚未保存信息，点击无反应
                 }
                 if (obj.css('display') == 'none') {
@@ -790,7 +804,7 @@ define([
 
             //点击区域外，mark-box隐藏
             $('.canvas').live('click', function() {
-                if ($('#viewer').find('.saveMarkBtn').length > 0) {
+                if ($('#viewer').find('#mark_title').length > 0) {
                     return; //尚未保存信息，点击无反应
                 }
                 if (Cache.getData('onDrag') == 1) {
@@ -1108,26 +1122,14 @@ define([
                     //    return;
                     // }
                     data = data || [];
-                    var allMarkList = Cache.getData('allMarkList') || [];
-                    //var mark_ids = Cache.getData('mark_ids') || [];
                     $.each(data, function(index, element) {
                         //创建标记元素及信息框
                         makeMarkInfo(element);
-                        //在缓存中查找不到对应的id，则插入新的mark信息
-                        if (!_.find(allMarkList, function(markInfo) {
-                            return element.mark_id === markInfo.mark_id;
-                        })) {
-                            allMarkList.push(element);
-                        }
-                        //mark_ids.push(element.mark_id);
-                        //allMarks.push(element);
-                    });
-                    //存储不同的mark对象
-                     Cache.putData('allMarkList', allMarkList);
-                    //Cache.putData('mark_ids', mark_ids);
+                    }); 
+                    
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
-                    alert(XMLHttpRequest + ' | ' + textStatus + ' | ' + errorThrown);
+                    console.log(XMLHttpRequest + ' | ' + textStatus + ' | ' + errorThrown);
                 }
             });
 
@@ -1233,8 +1235,8 @@ define([
                  delMarkbtn = '';
             }
             //非登陆用户自己的mark显示删除按钮
-            console.log(cookieFunc().getCookie("hasVisited"));
-            console.log(cookieFunc().getCookie("email"));
+            //console.log(cookieFunc().getCookie("hasVisited"));
+            //console.log(cookieFunc().getCookie("email"));
             if(Cache.getData("isLogin") == 0 && cookieFunc().getCookie("hasVisited") == "1" && cookieFunc().getCookie("email") == nickname ){
                 console.log("checked");
                 delMarkbtn = '<p class="delMarkbtn"><a class="btn btn-link">delete</a></p>';
@@ -1257,16 +1259,16 @@ define([
             //mark的评论框
             }else if( type == 1 && Cache.getData("isLogin") == 1){
                 var formClass = "matrixOrigin"; 
-                var reclustBtns = '<a class="reclustMarkBtn btn btn-m btn-s offset5" href="javascript:void(0)">Reclust</a>' + 
-                                  '<a class="addRegionBtn btn btn-m btn-s offset5" href="javascript:void(0)">Add</a>';
+                var reclustBtns = '<a class="reclustMarkBtn btn btn-m btn-s offset5" href="javascript:void(0)" title="click to show cluster result of this area">Reclust</a>' + 
+                                  '<a class="addRegionBtn btn btn-m btn-s offset5" href="javascript:void(0)" title="click to add a area to get the intersection cluster result">Add</a>';
                 //增加添加评论框
                 var desc_html = '<div class="mark-box">' +
                 '<div class="input-box">' +
                 '<form class="matrixBtn ' + formClass + '" method = "POST" action="" target= "_blank">' +
-                '<a class="detailMarkBtn btn btn-m btn-s offset5" href="javascript:void(0)">Details</a>' +
+                '<a class="detailMarkBtn btn btn-m btn-s offset5" href="javascript:void(0)" title="click to show the details of the area">Details</a>' +
                 reclustBtns +
                 //'<a class="saveMarkBtn btn btn-m btn-s offset5" href="javascript:void(0)">Save</a>' +
-                '<a class="cancelMarkBtn btn btn-m btn-s offset5" href="javascript:void(0)"> Delete </a>' +
+                '<a class="cancelMarkBtn btn btn-m btn-s offset5" href="javascript:void(0)" title="click to temporarily hide this area"> Cancel </a>' +
                 '<input id="x" type="hidden" name="x" value="">' +
                 '<input id="y" type="hidden" name="y" value="">' +
                 '<input id="w" type="hidden" name="w" value="">' +
@@ -1380,6 +1382,7 @@ define([
             //设置为未登录状态
             Cache.putData("isLogin" , 0);
 
+            //用cookie记录是否登陆过
             cookieFunc().setCookie("hasVisited",1);
 
             publicData.imageName = $("input[name='imagename']").val();

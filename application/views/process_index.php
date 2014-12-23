@@ -3,12 +3,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        
-        <!-- <link rel="stylesheet" type="text/css" href="./css/normalize.css"/> -->
-        <!-- <link rel="stylesheet" type="text/css" href="./css/furatto.css"/> -->
-        <!-- <link rel="stylesheet" type="text/css" href="./css/furatto_3.0.css"/> -->
         <link rel="stylesheet" type="text/css" href="./css/social.css"/>
-        <link rel="stylesheet" type="text/css" href="./style/heatmap_index.css"/>
+        <link rel="stylesheet" type="text/css" href="./css/heatmap_index.css"/>
         <link rel="stylesheet" type="text/css" href="./css/process_index.css"/>
     </head>
     <body>
@@ -46,18 +42,7 @@
 
         <div id="container">
             <div id="neck">
-                <!-- <h1>My Heatmaps</h1>
-                <p id="file_type_tip">
-                    <a>File Type</a>
-                </p>
-                <div id="fetch_file_box">
-                    <div id="upload_file_btn">
-                        <p><a>Upload Data File </a></p>
-                    </div>
-                    <div id="dropbox_chooser_btn">
-                        <p><a>Choose From Dropbox </a></p>
-                    </div>
-                </div> -->
+
             </div>
 
             <div id="content">
@@ -140,98 +125,6 @@
              <p> Copy right &copy; 2014 ,All rights reserved.</p>
         </div>
 
-<!--
-        <div id="tips_box" class="box">
-            <a class="close_tag"></a>
-            <div id="ftype">
-               <div class="ftype_item">
-                    <h3>TXT File</h3>
-                    <p> 
-                        Plain text file with the ".txt" file extension contains the data matrix ,the first row are the column names ,the first column are the row names, all names are with double quotation marks ,names and scores are seperated with tabs ,so the first line is one less than other lines. 
-                    </p> 
-               </div>
-               <div class="ftype_item">
-                    <h3>CDT File</h3>
-                    <p>
-                        Generalized CDT file is a tab-delimitted text file with the ".cdt" file extension. The leftmost column and topmost row are reserved for headers. The file must contain at least two columns followed by a column with the header GWEIGHT, and at least one row followed by a row with the header EWEIGHT. Any rows and columns before the EWEIGHT and GWEIGHT are treated as annotation kept in string form, and any after are treated as data.  
-                    </p> 
-               </div>
-            </div>
-            <div id="fnum">  
-                <p>
-                    Restricted by the capacity of our server, we limit every user to upload <strong class="emFont"> 10 files </strong> most, if you want to upload new files, you can delete some files previously uploaded . 
-                </p>
-            </div>
-        </div>
-
-    
-        <form id="upload_box" class="file-box box" action="<?= site_url(); ?>/sga/upload" method="POST" enctype="multipart/form-data">
-            <div class="box_header">
-                <h3>Upload Data File</h3>
-                 <a class="close_tag"></a>
-            </div>
-            <div class="box_content">
-                <a class='btn btn-m' href="javascript:void(0)">Select file</a>
-                <input type='text' name='textfield' id='textfield'/>
-                <input type="file" name="file" onchange="if(this.value) { document.getElementById('textfield').value = this.value; if(this.value.substr(-4) != '.txt' && this.value.substr(-4) != '.cdt'){ alert('File type error, please select a cdt or txt file!'); } }"/>
-                <label for="title">Title</label>
-                <input type="text" name="title" class="input_title"/>
-                <label for="description">Description</label>
-                <textarea name="description"></textarea>
-           
-                <div class="button-group">
-                    <div class="span12">
-                        <input type="button" class="cancel_create_btn btn btn-m" value="Cancel"/>
-                        <input type="submit" class="submit_create_btn btn btn-m" value="Upload"/>
-                    </div>
-                </div>
-             </div>
-        </form>
-
-        <form id="dropbox_box" class="file-box box" action="<?= site_url(); ?>/sga/upload" method="POST" enctype="multipart/form-data">
-            <div class="box_header">
-                <h3>Upload Data File</h3>
-                 <a class="close_tag"></a>
-            </div>
-            <div class="box_content">
-                <p class="dp_tips"> You have choose the file <i id="name"></i> from Dropbox </p>
-                <input type="hidden" name = "filename" value="" />
-                <input type="hidden" name = "fileurl" value="" />
-                <label for="title">Title</label>
-                <input type="text" name="title" class="input_title"/>
-                <label for="description">Description</label>
-                <textarea name="description"></textarea>
-            </div>
-            <div class="button-group">
-                <div class="span12">
-                     <input type="button" class="cancel_create_btn btn btn-m" value="Cancel"/>
-                     <input type="submit" class="submit_create_btn btn btn-m" value="Upload"/>
-                </div>
-            </div>
-        </form>
-
-        <div id="conform_box" class="box">
-            <div class="box_content">
-                <a class="close_tag"></a>
-                <div class="button-group">
-                    <p> Are you sure to delete data file <i><span id="del_file_name"></span><i> ?</p> 
-                    <input type="button" class="del_cancel_btn btn btn-m" value="Cancel" />
-                    <input type="button" class="del_conform_btn btn btn-m" value="OK" />
-                </div>
-            </div>
-        </div>
-
-        <div id="alert_box" class="box">
-            <div class="box_content">
-                <a class="close_tag"></a>
-                <div class="button-group">
-                    <p></p> 
-                    <input type="button" class="alert_tips_btn btn btn-m" value="OK" />
-                </div>
-            </div>
-        </div>
-        <div id="shade"></div>
--->
         <script data-main="./js/main/process_index.js" src="./js/require.js"></script>
     </body>
 </html>

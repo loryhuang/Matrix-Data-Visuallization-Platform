@@ -678,5 +678,9 @@ div.zoomOut{
   top: 0px;
   right: 0px;
   cursor: pointer;
-  background: url("../image/close-icon.png") no-repeat center center;
+  background: url("../image/close-icon-yellow.png") no-repeat center center;
+}
+
+.region.mine .region_close_icon {
+   background: url("../image/close-icon-mine.png") no-repeat center center;
 }

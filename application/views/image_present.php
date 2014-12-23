@@ -16,7 +16,6 @@
     <link rel="stylesheet" type="text/css" href="./css/social.css"/>
     <link rel="stylesheet" type="text/css" href="./css/main.css"/>
 
-    <!-- <link rel="stylesheet" type="text/css" href="./css/heatmap2.css"/> -->
     <!--[if lt IE 7]>
     <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js">IE7_PNG_SUFFIX = ".png";</script>
     <![endif]-->
@@ -39,7 +38,6 @@
     <input type="hidden" name="imagename" value="<?php echo $imagename ?>"/>
     <input type="hidden" name="cluster_type" value="<?php echo $cluster_type ?>"/>
     <input type="hidden" name="color_type" value="<?php echo $color_type ?>"/>
-    <!-- <input type="hidden" name="room_hash" value="<?php echo $room_hash ?>"/> -->
 </form>
 
 <div id="pageLoading">
@@ -55,7 +53,7 @@
 
 <div id="conform_box" class="box">
     <div class="box_content">
-        <a class="close_tag"></a>
+        <a class="close_tag" title="close"></a>
         <div class="button-group">
             <p> Are you sure to delete the <span id="del_type"> mark </span> <i><span id="del_mark_name"></span></i> ?</p> 
             <div class="conform_btn">
@@ -68,7 +66,7 @@
 
 <div id="alert_box" class="box" style="display:none">
     <div class="box_content">
-        <a class="close_tag"></a>
+        <a class="close_tag" title="close"></a>
         <div class="button-group">
             <p></p> 
             <input type="button" class="alert_tips_btn btn btn-m" value="OK" />

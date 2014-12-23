@@ -9,10 +9,10 @@
     <style type="text/css">
         body {
                 width: 100%;
-                height: 100%;
+                height: auto;
+                min-height: 750px;
                 margin: 0px;
                 padding: 0px;
-                /*position: relative;*/
                 background-color: #EDF0F0;
         }
 
@@ -25,8 +25,8 @@
 
         .login-form {
             width: 420px;
+            height: 100%;
             text-align: center;
-            min-height: 750px;
         }
 
         .login-form input[type] {

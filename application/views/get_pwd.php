@@ -3,13 +3,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title> heatmap -- login </title>
+        <title> heatmap -- get password </title>
         <link rel="stylesheet" type="text/css" href="./css/normalize.css"/>
         <link rel="stylesheet" type="text/css" href="./css/furatto.css"/>
         <style>
             body {
                 height: auto;
-                min-height: 750px;
+                min-height: 850px;
                 margin: 0px;
                 padding: 0px;
                 background-color: #EDF0F0;
@@ -32,6 +32,11 @@
             .form-box input[type] {
                 margin-bottom: 20px;
                 border-radius: 4px;
+            }
+
+            .form-box p {
+                text-align: justify;
+                margin-bottom: 25px;
             }
 
             .btn-primary {
@@ -60,7 +65,7 @@
                 color: #5FBFCC;
             }
 
-            #btn-login{
+            #btn-getpwd{
                 color: #FFF;
             }
             .login-form strong {
@@ -107,7 +112,6 @@
         </script>
         <![endif]-->
         <form action="<?= site_url(); ?>/user/login" class="login-form centered-form" method="post" accept-charset="utf-8">
-            <input type="hidden" name="ret_url" value="<?= $ret_url; ?>" />
             <div class="furatto-login-icon">
                 <img src="./images/customize-icon1502.png" alt="">
 
@@ -116,15 +120,16 @@
                 </h1>
             </div>
             <div class="row form-box">  
-                <!--<h3>Login</h3>-->
-                <input type="text" name="username" class="error" placeholder="Username">
-                <input type="password" name="pwd" placeholder="Password">
-                <input type="button" id="btn-login" value="Sign In" class="btn btn-primary btn-block btn-large ">
+                <h5>Get password</h5>
+                <p>Please input your username and email address , we will send the password to you via your registerd email</p>
+                <input type="text" name="username" class="error" placeholder="Username" />
+                <input type="text" name="email" placeholder="Email"/>
+                <input type="button" id="btn-getpwd" value="Submit" class="btn btn-primary btn-block btn-large " />
                 <div class="nav_tips">
                     <!-- <span>New here? </span> -->
-                    <a class="register-link" href="index.php/user/register_form">Sign Up</a>
+                    <!-- <a class="register-link" href="index.php/user/register_form">Sign Up</a>
                     <span>&nbsp;|&nbsp;</span>
-                    <a class="getpwd-link" href="index.php/user/getpwd_form">Forget password</a>
+                    <a class="getpwd-link" href="index.php/user/register_form">Forget password</a> -->
                 </div>
             </div>
             <div class="error help-hint"></div>
@@ -139,36 +144,47 @@
             $(document).ready(function () {
                 $(document).keydown(function (e) {
                     if (e.keyCode == 13) {
-                        $('#btn-login').click();
+                        $('#btn-getpwd').click();
                     }
                 });
-                $('#btn-login').click(function () {
+                $('#btn-getpwd').click(function () {
                     var username = $('input[name=username]').val();
-                    var pwd = $('input[name=pwd]').val();
-                    var ret_url = $('input[name=ret_url]').val();
-                    if (username === '' || pwd === '') {
+                    var email = $('input[name=email]').val();
+                   
+                    if (username === '' || email === '') {
                         $('.error').empty();
-                        $('.warning').html('Please input the username and password.');
+                        $('.warning').html('Please input the username and email.');
                         return;
                     } else {
                         $.ajax({
                             type: 'POST',
-                            url: 'index.php/user/login',
+                            url: 'index.php/user/check_email',
                             data: {
                                 'username': username,
-                                'pwd': pwd,
-                                'ret_url' : ret_url
+                                'email': email
                             },
                             complete: function (data) {
                                 var result = data.responseText;
-                                if (result === '1') {
+                                //console.log(result);
+                                if (result === '0') {
                                     $('.warning').empty();
                                     $('.error').html('Username is not exist!');
-                                } else if (result === '2') {
+                                } else if (result === '-1') {
                                     $('.warning').empty();
-                                    $('.error').html('Password error!');
-                                } else {
-                                    window.location.href = $('input[name=ret_url]').val();
+                                    $('.error').html('Email is not right!');
+                                }else if(result == "1"){
+                                     $.ajax({
+                                        type: 'POST',
+                                        url: 'index.php/sga/send_pwd',
+                                        data: {
+                                            'username': username,
+                                            'email': email
+                                        },
+                                        success: function (data) {
+                                            window.location.href = "index.php/user/login_form";
+                                            //console.log(data);
+                                        }
+                                    });
                                 }
                             }
                         });

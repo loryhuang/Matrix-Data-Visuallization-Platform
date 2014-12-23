@@ -5,7 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="pgl0jaa1au451x0"></script>
         <link rel="stylesheet" type="text/css" href="./css/social.css"/>
-        <link rel="stylesheet" type="text/css" href="./style/heatmap_index.css"/>
+        <link rel="stylesheet" type="text/css" href="./css/heatmap_index.css"/>
     </head>
     <body>
         <?php
@@ -125,7 +125,7 @@
 
 
         <div id="tips_box" class="box">
-            <a class="close_tag"></a>
+            <a class="close_tag" title="close"></a>
             <div id="ftype">
                <div class="ftype_item">
                     <h3>TXT File</h3>
@@ -151,7 +151,7 @@
         <form id="upload_box" class="file-box box" action="<?= site_url(); ?>/sga/upload" method="POST" enctype="multipart/form-data">
             <div class="box_header">
                 <h3>Upload Data File</h3>
-                 <a class="close_tag"></a>
+                 <a class="close_tag" title="close"></a>
             </div>
             <div class="box_content">
                 <a class='btn btn-m' href="javascript:void(0)">Select file</a>
@@ -175,7 +175,7 @@
         <form id="dropbox_box" class="file-box box" action="<?= site_url(); ?>/sga/upload" method="POST" enctype="multipart/form-data">
             <div class="box_header">
                 <h3>Upload Data File</h3>
-                 <a class="close_tag"></a>
+                 <a class="close_tag" title="close"></a>
             </div>
             <div class="box_content">
                 <p class="dp_tips"> You have choose the file <i id="name"></i> from Dropbox </p>
@@ -197,7 +197,7 @@
 
         <div id="conform_box" class="box">
             <div class="box_content">
-                <a class="close_tag"></a>
+                <a class="close_tag" title="close"></a>
                 <div class="button-group">
                     <p> Are you sure to delete data file <i><span id="del_file_name"></span></i> ?</p> 
                     <div class="conform_btn">
@@ -210,7 +210,7 @@
 
         <div id="alert_box" class="box">
             <div class="box_content">
-                <a class="close_tag"></a>
+                <a class="close_tag" title="close"></a>
                 <div class="button-group">
                     <p></p> 
                     <input type="button" class="alert_tips_btn btn btn-m" value="OK" />

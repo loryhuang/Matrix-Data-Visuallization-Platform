@@ -748,18 +748,18 @@ define([
                                         var formClass;
                                         if(Cache.getData("addStatus")){
                                             formClass = "matrixAdd";
-                                            reclustBtns = '<a class="mergeMarkBtn btn btn-m btn-s offset5" href="javascript:void(0)">MergeClust</a>' ;         
+                                            reclustBtns = '<a class="mergeMarkBtn btn btn-m btn-s offset5" href="javascript:void(0)" title="click to show the cluster result of the intersection">MergeClust</a>' ;         
                                         }else{
                                             formClass = "matrixOrigin"; 
-                                            reclustBtns = '<a class="reclustMarkBtn btn btn-m btn-s offset5" href="javascript:void(0)">Reclust</a>' + 
-                                                          '<a class="addRegionBtn btn btn-m btn-s offset5" href="javascript:void(0)">Add</a>';
+                                            reclustBtns = '<a class="reclustMarkBtn btn btn-m btn-s offset5" href="javascript:void(0)" title="click to show cluster result of this area">Reclust</a>' + 
+                                                          '<a class="addRegionBtn btn btn-m btn-s offset5" href="javascript:void(0)" title="click to add a area to get the intersection cluster result">Add</a>';
                                         }
 
                                         //增加添加评论框
                                         var mark_box = '<div class="mark-box">' +
                                         '<div class="input-box">' +
                                         '<form class="matrixBtn ' + formClass + '" method = "POST" action="" target= "_blank">' +
-                                        '<a class="detailMarkBtn btn btn-m btn-s offset5" href="javascript:void(0)">Details</a>' +
+                                        '<a class="detailMarkBtn btn btn-m btn-s offset5" href="javascript:void(0)" title="click to show the details of the area">Details</a>' +
                                         reclustBtns +
                                         //'<a id="addRegionBtn" class="btn pull-right btn-m offset5" href="javascript:void(0)">Add</a>' +
                                         //'<a id="reclustMarkBtn" class="btn pull-right btn-m offset5" href="javascript:void(0)">Reclust</a>' +
@@ -813,7 +813,7 @@ define([
                                             row_num = Cache.getData('row_num');
 
                                         var imageZoom = Cache.getData("imageZoom");
-                                        console.log(imageZoom);
+                                        //console.log(imageZoom);
 
                                         var initialWidth = col_num * imageZoom * 2; //原图片的大小
                                         var initialHeight = row_num * imageZoom * 2;

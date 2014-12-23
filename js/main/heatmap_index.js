@@ -44,7 +44,7 @@ require([
             //Calculate position of pop-up box AND show pop-ups
             function popupBox(obj) {
                 var top = ($(window).height() - obj.height()) / 2 - 30;
-                var left = ($(window).width() - obj.width()) / 2 - 100;
+                var left = ($(window).width() - obj.width()) / 2 ;
                 obj.css({
                     'left': left, 
                     'top': top
@@ -222,6 +222,16 @@ require([
 
            //upload button event
             $(".submit_create_btn").click(function(){
+                var title = $('input[name="title"]').val();
+                var description = $('textarea[name="description"]').val();
+                if(title.length > 50){
+                    alert("title can not be more than 50 characters!");
+                    return;
+                }
+                if(description.length > 250){
+                    alert("description can not be more than 250 characters!");
+                    return;
+                }
                 $(this).parents("form").submit();
                 $(this).parents(".box").find(".upload_shade").show();
             });

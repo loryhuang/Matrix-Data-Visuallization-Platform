@@ -1,0 +1,4 @@
+heatmap for sga version ,simplfied sga_lss version
+remove mark ,room ,comment 
+reserve register,login ,upload ,view ,zoom ,imagick ,recluster.
+by huang on work of linshoushan,yeyongsheng,zhaoxianyan,lizhilin,renjumei
